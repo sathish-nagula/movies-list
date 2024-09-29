@@ -1,0 +1,23 @@
+<div class="layout-column align-items-center mt-50">
+    <section class="layout-row align-items-center justify-content-center">
+      <input type="number" class="large" placeholder="Enter Year eg 2015" [(ngModel)]="year"
+             data-test-id="app-input"/>
+      <button class="" (click)="searchMovies()" data-test-id="submit-button">Search</button>
+    </section>
+  
+  
+    <ul class="mt-50 styled" data-test-id="movieList">
+      <li class="slide-up-fade-in py-10"></li>
+    </ul>
+  
+    <div class="mt-50 slide-up-fade-in"
+         data-test-id="no-result">
+        {{year}}
+        {{movies}}
+        <ul class="mt-50 styled" data-test-id="movieList">
+          <li *ngFor="let movie of movies" class="slide-up-fade-in py-10">{{ movie.Title }}</li>
+        </ul>
+        </div>
+      
+        <div *ngIf="noResults" class="mt-50 slide-up-fade-in" data-test-id="no-result">No Results Found</div>
+  </div>
